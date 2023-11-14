@@ -1,20 +1,20 @@
 # Helm
 
-## Create cluster with additional configuration
+## Create a cluster with additional configuration
 
-We need it to expose service to host machine.
+In the command below is an additional config because we need it to expose service to the host machine
 
 ```
 kind create cluster --config kind-config.yaml
 ```
 
-## Create chart
+## Create a chart
 
 ```
 helm create brownbag-kubernetes-bootcamp
 ```
 
-## Update chart configuration
+## Update the chart configuration
 
 In the file `values.yaml` set a new values
 
@@ -28,7 +28,7 @@ service:
   port: 8080
 ```
 
-## Install chart on the cluster
+## Install the chart on the cluster
 
 In the chart directory
 
@@ -54,7 +54,7 @@ helm upgrade brownbag-kubernetes-bootcamp .
 
 ## Scale up
 
-We can just edit the file `values.yaml` in the chart directory
+We can edit the file `values.yaml` in the chart directory
 
 ```
 replicaCount: 2
@@ -66,7 +66,7 @@ and apply changes
 helm upgrade brownbag-kubernetes-bootcamp .
 ```
 
-### Delete cluster
+### Delete the cluster
 
 ```
 kind delete cluster

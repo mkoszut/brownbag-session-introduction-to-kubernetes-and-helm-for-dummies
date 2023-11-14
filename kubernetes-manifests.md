@@ -1,14 +1,14 @@
 # Kubernetes via manifests
 
-### Create cluster with additional configuration
+## Create a cluster with additional configuration
 
-We need it to expose service to host machine.
+In the command below is an additional config because we need it to expose service to the host machine
 
 ```
 kind create cluster --config kind-config.yaml
 ```
 
-### Create deployment
+## Create deployment
 
 ```
 kubectl apply -f - <<EOF
@@ -40,17 +40,17 @@ or
 kubectl apply -f ./manifests/kubernetes-bootcamp.deployment.yaml
 ```
 
-### Create port-forwarding
+## Create a port-forward
 
 ```
 kubectl port-forward pod/... 8080 8080
 ```
 
-### Scale up
+## Scale up
 
-We can just edit the file `./manifests/kubernetes-bootcamp.deployment.yaml` and apply changes.
+We can edit the file `./manifests/kubernetes-bootcamp.deployment.yaml` and apply changes.
 
-### Create service
+## Create a service
 
 ```
 kubectl apply -f - <<EOF
@@ -79,7 +79,7 @@ or
 kubectl apply -f ./manifests/kubernetes-bootcamp.service.yaml
 ```
 
-### Delete cluster
+## Delete the cluster
 
 ```
 kind delete cluster
