@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "brownbag-kubernetes-bootcamp.fullname" . }}-test-connection"
+  labels:
+    {{- include "brownbag-kubernetes-bootcamp.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "brownbag-kubernetes-bootcamp.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never
